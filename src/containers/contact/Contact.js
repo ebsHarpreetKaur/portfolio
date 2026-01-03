@@ -6,13 +6,14 @@ import {Fade} from "react-reveal";
 import email from "../../assets/lottie/email";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
+import Button from "../../components/button/Button";
 
 export default function Contact() {
   const {isDark} = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main contact-margin-top" id="contact">
-        <div className="contact-div-main">
+      {/* <div className="main contact-margin-top" id="contact"> */}
+        <div className="contact-div-main" style={{marginRight:"5%", marginLeft:"5%"}}>
           <div className="contact-header">
             <h1 className="heading contact-title">{contactInfo.title}</h1>
             <p
@@ -24,12 +25,13 @@ export default function Contact() {
             >
               {contactInfo.subtitle}
             </p>
+            <Button text="Book a meeting" href="#contact" />
             <div
               className={
                 isDark ? "dark-mode contact-text-div" : "contact-text-div"
               }
             >
-              {contactInfo.number && (
+              {/* {contactInfo.number && (
                 <>
                   <a
                     className="contact-detail"
@@ -48,11 +50,14 @@ export default function Contact() {
                 {contactInfo.email_address}
               </a>
               <br />
+              <br /> */}
               <br />
+
+              <p>find me here.</p>
               <SocialMedia />
             </div>
-          </div>
-          <div className="contact-image-div">
+          {/* </div> */}
+          {/* <div className="contact-image-div">
             {illustration.animated ? (
               <DisplayLottie animationData={email} />
             ) : (
@@ -61,7 +66,7 @@ export default function Contact() {
                 src={require("../../assets/images/contactMailDark.svg")}
               ></img>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </Fade>

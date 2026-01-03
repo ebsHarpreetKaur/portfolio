@@ -22,7 +22,8 @@ export default function ExperienceCard({cardInfo, isDark}) {
       ? descBullets.map((item, i) => (
           <li
             key={i}
-            className={isDark ? "subTitle dark-mode-text" : "subTitle"}
+          className={isDark ? "subTitle dark-mode-text" : "subTitle"}
+          style={{ fontSize:"15px"}}
           >
             {item}
           </li>
@@ -32,21 +33,21 @@ export default function ExperienceCard({cardInfo, isDark}) {
 
   return (
     <div className={isDark ? "experience-card-dark" : "experience-card"}>
-      <div style={{background: rgb(colorArrays)}} className="experience-banner">
-        <div className="experience-blurred_div"></div>
-        <div className="experience-div-company">
+      {/* <div style={{background: rgb(colorArrays)}} className="experience-banner"> */}
+        {/* <div className="experience-blurred_div"></div> */}
+        {/* <div className="experience-div-company">
           <h5 className="experience-text-company">{cardInfo.company}</h5>
-        </div>
+        </div> */}
 
-        <img
+        {/* <img
           crossOrigin={"anonymous"}
           ref={imgRef}
           className="experience-roundedimg"
           src={cardInfo.companylogo}
           alt={cardInfo.company}
           onLoad={() => getColorArrays()}
-        />
-      </div>
+        /> */}
+      {/* </div> */}
       <div className="experience-text-details">
         <h5
           className={
@@ -55,9 +56,18 @@ export default function ExperienceCard({cardInfo, isDark}) {
               : "experience-text-role"
           }
         >
-          {cardInfo.role}
+          {cardInfo.company}
         </h5>
         <h5
+          className={
+            isDark
+              ? "experience-text-role dark-mode-text"
+              : "experience-text-role"
+          }
+        >
+          Role: {cardInfo.role}
+        </h5>
+        {/* <h5
           className={
             isDark
               ? "experience-text-date dark-mode-text"
@@ -65,8 +75,8 @@ export default function ExperienceCard({cardInfo, isDark}) {
           }
         >
           {cardInfo.date}
-        </h5>
-        <p
+        </h5> */}
+        {/* <p
           className={
             isDark
               ? "subTitle experience-text-desc dark-mode-text"
@@ -74,9 +84,12 @@ export default function ExperienceCard({cardInfo, isDark}) {
           }
         >
           {cardInfo.desc}
-        </p>
+        </p> */}
         <ul>
           <GetDescBullets descBullets={cardInfo.descBullets} isDark={isDark} />
+        </ul>
+        <ul>
+          <GetDescBullets descBullets={cardInfo.descBullets2} isDark={isDark} />
         </ul>
       </div>
     </div>
